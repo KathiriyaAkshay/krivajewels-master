@@ -1,0 +1,75 @@
+@import "./variables";
+
+.explore-product-component {
+  background-color: rgba($color: $mainBg, $alpha: 0.05);
+  padding: 30px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: calc(100vh - 100px - 200px - 120px);
+  min-width: 400px;
+
+  .subtitle {
+    // border: 2px solid red;
+    font-weight: 300;
+  }
+
+  .searchResultText {
+    font-size: 18px;
+    // border: 2px solid red;
+    width: 100%;
+
+    span {
+      font-weight: 500;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .explore-product-component {
+    padding: 10px 50px;
+    min-height: calc(100vh - 100px - 200px - 120px);
+    min-width: 400px;
+
+    .subtitle {
+      // border: 2px solid red;
+      font-weight: 300;
+      font-size: 16px;
+    }
+
+    .searchResultText {
+      font-size: 16px;
+      // border: 2px solid red;
+      width: 100%;
+
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .explore-product-component {
+    padding: 10px 20px;
+    min-height: calc(100vh - 100px - 200px - 120px);
+    min-width: 400px;
+
+    .subtitle {
+      // border: 2px solid red;
+      font-weight: 300;
+      font-size: 14px;
+    }
+
+    .searchResultText {
+      font-size: 14px;
+      // border: 2px solid red;
+      width: 100%;
+
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+}

@@ -1,0 +1,304 @@
+@import "./variables";
+
+.categoryComponent {
+  //   border: 2px solid red;
+  padding: 50px 100px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  .categoryContainer {
+    // border: 2px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    overflow: auto;
+    width: 100%;
+    gap: 30px;
+
+    .categoryBox {
+      //   border: 2px solid red;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+      gap: 10px;
+
+      .imgBox {
+        height: 150px;
+        width: 150px;
+        border-radius: 100%;
+        overflow: hidden;
+
+        .categoryImage {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          transition: all 0.2s ease;
+        }
+      }
+      .categoryTitle {
+        font-size: 16px;
+        font-weight: 500;
+        color: $black;
+        transition: all 0.2s ease;
+        text-decoration: none;
+      }
+
+      &:hover {
+        .imgBox {
+          .categoryImage {
+            transform: scale(1.1);
+          }
+        }
+        .categoryTitle {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.diamondComponent {
+  //   border: 2px solid red;
+  padding: 25px 100px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  .diamondContainer {
+    // border: 2px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    overflow: auto;
+    width: 100%;
+    gap: 50px;
+
+    .diamondBox {
+      //   border: 2px solid red;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      gap: 5px;
+      text-decoration: none;
+
+      .imgBox {
+        height: 65px;
+        width: 65px;
+        border-radius: 100%;
+        overflow: hidden;
+
+        .diamondImage {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          transition: all 0.2s ease;
+        }
+      }
+      .diamondTitle {
+        font-weight: 400;
+        color: $black;
+        transition: all 0.2s ease;
+      }
+
+      &:hover {
+        .imgBox {
+          .diamondImage {
+            transform: scale(1.1);
+          }
+        }
+        .diamondTitle {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 0 !important;
+    background-color: #f5f5f5;
+  }
+  .categoryComponent {
+    // border: 2px solid red;
+    padding: 20px 50px;
+    padding-bottom: 10px;
+    gap: 20px;
+
+    .categoryContainer {
+      // border: 2px solid red;
+      gap: 30px;
+      padding-bottom: 20px;
+
+      .categoryBox {
+        cursor: pointer;
+        gap: 10px;
+
+        .imgBox {
+          height: 100px;
+          width: 100px;
+        }
+        .categoryTitle {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .diamondComponent {
+    padding: 20px 50px;
+    padding-bottom: 10px;
+    gap: 20px;
+
+    .diamondContainer {
+      // border: 2px solid red;
+      gap: 30px;
+      padding-bottom: 20px;
+
+      .diamondBox {
+        cursor: pointer;
+        gap: 10px;
+
+        .imgBox {
+          height: 50px;
+          width: 50px;
+        }
+        .diamondTitle {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 0 !important;
+    background-color: #f5f5f5;
+  }
+  .categoryComponent {
+    // border: 2px solid red;
+    padding: 20px 20px;
+    padding-bottom: 10px;
+    gap: 15px;
+
+    .categoryContainer {
+      // border: 2px solid red;
+      gap: 20px;
+      padding-bottom: 15px;
+
+      .categoryBox {
+        cursor: pointer;
+        gap: 10px;
+
+        .imgBox {
+          height: 70px;
+          width: 70px;
+        }
+        .categoryTitle {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .diamondComponent {
+    // border: 2px solid red;
+    padding: 20px 20px;
+    padding-bottom: 10px;
+    gap: 15px;
+
+    .diamondContainer {
+      // border: 2px solid red;
+      gap: 20px;
+      padding-bottom: 15px;
+
+      .diamondBox {
+        cursor: pointer;
+        gap: 10px;
+
+        .imgBox {
+          height: 35px;
+          width: 35px;
+        }
+        .diamondTitle {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 0 !important;
+    background-color: #f5f5f5;
+  }
+  .categoryComponent {
+    // border: 2px solid red;
+    padding: 10px 20px;
+    padding-bottom: 10px;
+    gap: 15px;
+    min-width: 400px;
+
+    .categoryContainer {
+      // border: 2px solid red;
+      gap: 15px;
+      padding-bottom: 0;
+
+      .categoryBox {
+        cursor: pointer;
+        gap: 10px;
+
+        .imgBox {
+          height: 50px;
+          width: 50px;
+        }
+        .categoryTitle {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .diamondComponent {
+    // border: 2px solid red;
+    padding: 10px 20px;
+    padding-bottom: 10px;
+    gap: 15px;
+    min-width: 400px;
+
+    .diamondContainer {
+      // border: 2px solid red;
+      gap: 15px;
+      padding-bottom: 0;
+
+      .diamondBox {
+        cursor: pointer;
+        gap: 10px;
+
+        .imgBox {
+          height: 30px;
+          width: 30px;
+        }
+        .diamondTitle {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

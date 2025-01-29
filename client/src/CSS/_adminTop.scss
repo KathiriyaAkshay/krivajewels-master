@@ -1,0 +1,63 @@
+@import "./variables";
+
+.adminTop {
+  width: 100%;
+  height: 80px;
+  background-color: $darkBlue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 30px;
+  z-index: 8;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  .leftNav {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+    a {
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 4px;
+      font-weight: 300;
+      font-style: normal;
+      text-decoration: none;
+      font-size: 40px;
+      color: $fontcolor;
+    }
+    // img {
+    //   height: 35px;
+    // }
+  }
+
+  .profile {
+    // border: 2px solid red;
+    color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 20px;
+
+    .userImage {
+      border: 2px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+      border-radius: 50%;
+      padding: 5px;
+
+      ion-icon {
+        font-size: 25px;
+      }
+    }
+
+    .title {
+      font-weight: 300;
+      font-size: 20px;
+    }
+  }
+}

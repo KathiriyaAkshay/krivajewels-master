@@ -1,0 +1,505 @@
+@import "./variables";
+
+.mailPopUpLayer {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.addCategory {
+    .popUpBox {
+      height: fit-content;
+      max-height: 80vh;
+      width: 50%;
+      overflow: auto;
+    }
+  }
+
+  .popUpBox {
+    background-color: $fontcolor;
+    padding: 20px 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: flex-start;
+    width: 70vw;
+    height: 80vh;
+    color: $black;
+    overflow: auto;
+
+    &.mailSentPopUpBox {
+      height: 200px;
+      width: 500px;
+      display: flex;
+      justify-content: center;
+    }
+
+    ion-icon {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    .popuptitle {
+      font-size: 25px;
+      font-weight: 500;
+      color: $black;
+      align-self: center;
+    }
+
+    .confirmationMessage {
+      font-size: 20px;
+      font-weight: 300;
+    }
+
+    form {
+      // border: 2px solid red;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%;
+      height: fit-content;
+
+      label {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 5px;
+        margin-top: 10px;
+
+        span {
+          color: red;
+          font-size: 16px;
+        }
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        font-size: 14px;
+        color: $black;
+        background: $secondary;
+        border: none;
+        resize: none;
+        outline: none;
+      }
+
+      textarea {
+        height: 100px;
+      }
+
+      .previewImages {
+        img {
+          height: 30px;
+          width: 30px;
+        }
+      }
+      video {
+        height: 100px;
+        width: 100px;
+      }
+      .msg {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.8);
+        margin-top: 20px;
+      }
+    }
+    .btn-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      gap: 10px;
+
+      &.confirmation {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.titleHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  // border: 2px solid red;
+
+  h2 {
+    font-weight: 500;
+    font-size: 24px;
+    color: $black;
+  }
+}
+
+.adminMainContent {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+
+  .right {
+    background-color: $fontcolor;
+    width: 100%;
+    height: 100%;
+    padding-left: 220px;
+    padding-top: 95px;
+    color: $black;
+  }
+
+  .adminSide {
+    width: 200px;
+    background-color: $darkBlue;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 80px;
+    z-index: 5;
+    color: $darkBlue;
+
+    .menus {
+      width: 100%;
+      height: calc(100vh - 80px);
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .topMenus,
+      .bottomMenus {
+        overflow: auto;
+        list-style: none;
+        overflow: hidden;
+        margin-bottom: 10px;
+        font-weight: 300;
+
+        .link {
+          // border: 2px solid red;
+          width: fit-content;
+          justify-content: center;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          width: 100%;
+          color: $fontcolor;
+          text-decoration: none;
+          font-size: 16px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: color 0.3s ease;
+          padding: 8px;
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          &.menuActive {
+            color: $darkBlue;
+            background-color: $fontcolor;
+            &:hover {
+              text-decoration: none;
+            }
+          }
+
+          ion-icon {
+            margin-right: 10px;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  button {
+    outline: none;
+  }
+
+  .adminSettings {
+    padding-right: 20px;
+    overflow-y: auto;
+    // border: 2px solid red;
+    padding-bottom: 50px;
+    overflow-x: hidden;
+
+    .form {
+      // border: 2px solid red;
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      width: 1000px;
+      margin-left: 0px;
+
+      .fieldTitle {
+        font-weight: 300;
+        font-size: 20px;
+        margin-bottom: 8px;
+
+        span {
+          color: red;
+        }
+      }
+
+      .formField {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        .dateBox {
+          display: flex;
+          width: 100%;
+          // border: 2px solid red;
+          justify-content: space-between;
+
+          .subFormField {
+            // border: 2px solid red;
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+
+            input[type="text"],
+            input[type="number"] {
+              width: 100%;
+            }
+
+            label {
+              font-weight: 300;
+              font-size: 20px;
+              margin-bottom: 8px;
+
+              span {
+                color: red;
+              }
+            }
+          }
+        }
+
+        input[type="text"],
+        input[type="email"] {
+          background: none;
+          outline: none;
+          padding: 8px 10px;
+          border: 1px solid $fontcolor;
+          background: $fontcolor;
+          width: 45%;
+          border-radius: 5px;
+          color: $black;
+          font-size: 16px;
+          border: 2px solid $darkBlue;
+
+          &::placeholder {
+            color: $black;
+            opacity: 0.7;
+            font-weight: 0;
+          }
+        }
+
+        label {
+          font-size: 16px;
+          margin-bottom: 8px;
+        }
+
+        .fieldTitle {
+          font-weight: 300;
+          font-size: 18px;
+          margin-bottom: 8px;
+        }
+      }
+    }
+    .form2 {
+      // border: 2px solid red;
+      display: flex;
+      flex-direction: column;
+      margin-top: 50px;
+      width: 1000px;
+      margin-left: 0px;
+
+      .fieldTitle {
+        font-weight: 300;
+        font-size: 25px;
+        margin-bottom: 20px;
+
+        span {
+          color: red;
+        }
+      }
+
+      .formField {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        .dateBox {
+          display: flex;
+          width: 100%;
+          // border: 2px solid red;
+          justify-content: space-between;
+
+          .subFormField {
+            // border: 2px solid red;
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+
+            input {
+              background: none;
+              outline: none;
+              padding: 8px 10px;
+              border: 1px solid $fontcolor;
+              background: $fontcolor;
+              width: 100%;
+              border-radius: 5px;
+              color: $black;
+              border: 2px solid $darkBlue;
+              font-size: 16px;
+
+              &::placeholder {
+                color: $black;
+                opacity: 0.7;
+                font-weight: 0;
+              }
+            }
+
+            label {
+              font-weight: 300;
+              font-size: 20px;
+              margin-bottom: 8px;
+
+              span {
+                color: red;
+              }
+            }
+          }
+        }
+
+        label {
+          font-size: 16px;
+          margin-bottom: 8px;
+        }
+
+        .fieldTitle {
+          font-weight: 300;
+          font-size: 18px;
+          margin-bottom: 8px;
+        }
+      }
+    }
+    .submit {
+      width: fit-content;
+      font-size: 16px;
+    }
+  }
+
+  .adminCategory {
+    padding-right: 50px;
+    overflow-y: auto;
+    padding-bottom: 50px;
+    overflow-x: hidden;
+
+    .categoryContainer {
+      overflow: hidden;
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(6, minmax(150px, 1fr));
+      width: 100%;
+
+      .categoryBox {
+        width: 100%;
+        border: 1px solid $darkBlue;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        .imgBox {
+          height: 150px;
+          width: 150px;
+          border-radius: 100%;
+          overflow: hidden;
+          position: relative;
+
+          .categoryImage {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: all 0.2s ease;
+
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+        .categoryTitle {
+          font-weight: 500;
+          color: $darkBlue;
+          transition: all 0.2s ease;
+        }
+        .actionBtns {
+          display: flex;
+          gap: 10px;
+
+          button {
+            border-radius: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0;
+            height: 35px;
+            width: 35px;
+
+            ion-icon {
+              margin: 0;
+              font-size: 14px;
+            }
+
+            &.edit {
+              border: 2px solid $darkBlue;
+              background-color: $darkBlue;
+              color: $fontcolor;
+              &:hover {
+                background-color: $fontcolor;
+                color: $darkBlue;
+              }
+            }
+            &.delete {
+              border: 2px solid red;
+              background-color: red;
+              color: $fontcolor;
+              &:hover {
+                background-color: $fontcolor;
+                color: red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .AdminProducts {
+    padding-right: 50px;
+    overflow-y: auto;
+    padding-bottom: 50px;
+    overflow-x: hidden;
+  }
+}
